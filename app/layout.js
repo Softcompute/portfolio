@@ -1,5 +1,7 @@
 import "../public/assets/vendor/bootstrap/css/bootstrap.min.css";
 import "../public/assets/css/style.css";
+import "../public/assets/vendor/boxicons/css/boxicons.min.css";
+import "../public/assets/vendor/boxicons/css/boxicons.min.css";
 
 export const metadata = {
   title: "Gael Ekofo | Développeur Full Stack",

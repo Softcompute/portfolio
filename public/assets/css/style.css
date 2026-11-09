@@ -1104,3 +1104,284 @@ section {
     padding-right: 20px 15px;
   }
 }
+/* Identité visuelle — portfolio Gael Ekofo */
+:root {
+  --gael-nuit: #0b1728;
+  --gael-encre: #142941;
+  --gael-texte: #40536b;
+  --gael-bleu: #075985;
+  --gael-azur: #7dd3fc;
+  --gael-clair: #f2f7fc;
+  --gael-bordure: #d9e5f0;
+  --gael-ombre: 0 10px 28px rgba(11, 23, 40, 0.08);
+}
+
+body {
+  font-family: "Open Sans", system-ui, sans-serif;
+  color: var(--gael-texte);
+}
+
+a {
+  color: var(--gael-bleu);
+}
+
+a:hover {
+  color: #0c4a6e;
+}
+
+#header {
+  background: linear-gradient(155deg, #163251, var(--gael-nuit) 65%);
+  transition: left 260ms ease;
+}
+
+#header .profile img {
+  border-color: #365877;
+}
+
+#header .profile h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+#header .nav-menu a {
+  margin-bottom: 5px;
+  border-radius: 9px;
+  color: #d5e3f2;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+#header .nav-menu a:is(:hover, :focus-visible, .active) {
+  background: #234764;
+  color: #fff;
+}
+
+#header .nav-menu a.active {
+  box-shadow: inset 3px 0 var(--gael-azur);
+}
+
+.mobile-nav-toggle {
+  background: var(--gael-bleu);
+  box-shadow: var(--gael-ombre);
+}
+
+#hero {
+  position: relative;
+  isolation: isolate;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  background-attachment: scroll;
+  background-position: center;
+}
+
+#hero::before {
+  background: linear-gradient(100deg, rgba(8, 20, 36, 0.92), rgba(8, 20, 36, 0.32));
+}
+
+#hero .hero-container {
+  width: min(100%, 980px);
+  min-width: 0;
+  padding-inline: clamp(24px, 6vw, 88px) !important;
+  animation: gael-apparition 700ms cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+#hero h1 {
+  margin-bottom: 16px;
+  font-size: clamp(2.35rem, 6vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+#hero p {
+  margin-bottom: 0;
+  font-size: clamp(1.05rem, 2.6vw, 1.6rem);
+  line-height: 1.65;
+}
+
+#hero p span {
+  border-bottom-color: var(--gael-azur);
+  letter-spacing: 0.025em;
+}
+
+@keyframes gael-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1200px) {
+  #hero {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #hero {
+    background-position: 64% center;
+  }
+
+  #hero::before {
+    background: rgba(8, 20, 36, 0.65);
+  }
+}
+
+#main > section {
+  padding-block: clamp(48px, 7vw, 88px);
+}
+
+#main .section-bg {
+  background: var(--gael-clair);
+}
+
+#main .section-title h2,
+#main h3 {
+  color: var(--gael-encre);
+}
+
+#main .section-title h2 {
+  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  letter-spacing: -0.035em;
+}
+
+#main .section-title h2::after {
+  width: 50px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--gael-bleu), #38bdf8);
+}
+
+#main p {
+  line-height: 1.7;
+}
+
+#about .section-title p,
+#contact .section-title p {
+  max-width: 68ch;
+}
+
+#resume .resume-item {
+  border-color: #7cb6d8;
+}
+
+#resume .resume-item::before {
+  border-color: var(--gael-bleu);
+}
+
+/* Cartes et volets des projets */
+#portfolio .card {
+  overflow: hidden;
+  border: 1px solid var(--gael-bordure);
+  border-radius: 18px;
+  box-shadow: var(--gael-ombre);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+#portfolio .card-body {
+  padding: clamp(18px, 2.5vw, 26px);
+}
+
+#portfolio .card h3 {
+  font-weight: 700;
+}
+
+#portfolio .ratio {
+  border-bottom: 1px solid var(--gael-bordure);
+}
+
+#portfolio summary {
+  color: var(--gael-bleu) !important;
+  cursor: pointer;
+}
+
+#portfolio details[open] {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--gael-clair);
+}
+
+#portfolio details[open] > ul {
+  animation: gael-apparition 220ms ease-out both;
+}
+
+#portfolio .card:focus-within {
+  border-color: var(--gael-bleu);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #portfolio .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(11, 23, 40, 0.14);
+  }
+}
+
+#portfolio .btn-outline-primary {
+  --bs-btn-color: var(--gael-bleu);
+  --bs-btn-border-color: var(--gael-bleu);
+  --bs-btn-hover-bg: var(--gael-bleu);
+  --bs-btn-hover-border-color: var(--gael-bleu);
+  --bs-btn-active-bg: #0c4a6e;
+  --bs-btn-active-border-color: #0c4a6e;
+  border-radius: 9px;
+}
+
+#contact .btn-primary {
+  --bs-btn-bg: var(--gael-bleu);
+  --bs-btn-border-color: var(--gael-bleu);
+  --bs-btn-hover-bg: #0c4a6e;
+  --bs-btn-hover-border-color: #0c4a6e;
+  padding: 10px 20px;
+  border-radius: 9px;
+}
+
+#main :is(a, summary):focus-visible,
+#header a:focus-visible,
+.mobile-nav-toggle:focus-visible {
+  outline: 3px solid #0284c7 !important;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  #hero .hero-container,
+  #portfolio details[open] > ul {
+    animation: none;
+  }
+
+  #header,
+  #header .nav-menu a,
+  .mobile-nav-toggle,
+  #portfolio .card {
+    transition: none;
+  }
+
+  #portfolio .card:hover {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #main .rubrique-visible > .container {
+    animation: entree-rubrique 550ms ease-out both;
+  }
+
+  @keyframes entree-rubrique {
+    from {
+      opacity: 0.45;
+      transform: translateY(14px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
